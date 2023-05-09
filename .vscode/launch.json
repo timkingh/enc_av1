@@ -1,0 +1,23 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "cppdbg",
+            "request": "launch",
+            "name": "Launch(gdb)",
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\Strawberry\\c\\bin\\gdb.exe",
+            "program": "D:\\AV1\\code\\vscode_aom\\aom\\build\\aomdec.exe",
+            "cwd": "${workspaceRoot}",
+            "args": [
+                "--progress",
+                "D:\\AV1\\stream\\sample.av1",
+                "-o", "sample.yuv"
+            ],
+            "stopAtEntry": true
+        }
+    ]
+}
