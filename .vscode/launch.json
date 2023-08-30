@@ -5,19 +5,33 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "name": "Launch(gdb)",
-            "MIMode": "gdb",
-            "miDebuggerPath": "C:\\Strawberry\\c\\bin\\gdb.exe",
-            "program": "D:\\AV1\\code\\vscode_aom\\aom\\build\\aomdec.exe",
-            "cwd": "${workspaceRoot}",
+            "program": "${workspaceFolder}/rkbuild/aomdec",
             "args": [
-                "--progress",
-                "D:\\AV1\\stream\\sample.av1",
-                "-o", "sample.yuv"
+                "/home/timkingh/doc/sample.av1",
+                "--progress", "-o", "${workspaceFolder}/sample.yuv"
             ],
-            "stopAtEntry": true
+            "stopAtEntry": true,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "preLaunchTask": "build",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
         }
+
     ]
 }

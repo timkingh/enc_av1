@@ -1,16 +1,24 @@
 {
 	"version": "2.0.0",
 	"tasks": [
-		{
-			"type": "cmake",
-			"label": "CMake: build",
-			"command": "build",
-			"targets": [
-				"aomdec"
-			],
-			"group": "build",
-			"problemMatcher": [],
-			"detail": "CMake template build task"
-		}
+        {
+            "label": "echo",
+            "type": "shell",
+            "command": "echo ${workspaceFolder}"
+        },
+        {
+            "type": "shell",
+            "label": "build",
+            "command": "bash -c '.vscode/rkbuild.sh ${workspaceFolder}'",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "compiler: cmake with ninja on mingw"
+        }
 	]
 }
