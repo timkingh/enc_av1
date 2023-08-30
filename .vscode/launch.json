@@ -11,7 +11,8 @@
             "program": "${workspaceFolder}/rkbuild/aomdec",
             "args": [
                 "/home/timkingh/doc/sample.av1",
-                "--progress", "-o", "${workspaceFolder}/sample.yuv"
+                "--progress", "-o", "${workspaceFolder}/sample.yuv",
+                "--limit=1"
             ],
             "stopAtEntry": true,
             "cwd": "${fileDirname}",

@@ -177,7 +177,7 @@ set_aom_option_var(ENABLE_DECODE_PERF_TESTS "Enables decoder performance tests"
                    OFF)
 set_aom_option_var(ENABLE_DISTCC "Enable distcc support." OFF)
 set_aom_option_var(ENABLE_DOCS
-                   "Enable documentation generation (doxygen required)." ON)
+                   "Enable documentation generation (doxygen required)." OFF)
 set_aom_option_var(ENABLE_ENCODE_PERF_TESTS "Enables encoder performance tests"
                    OFF)
 set_aom_option_var(ENABLE_EXAMPLES "Enables build of example code." ON)
@@ -187,46 +187,46 @@ set_aom_option_var(
   "Enables running tests within IDEs like Visual Studio and Xcode." OFF)
 set_aom_option_var(ENABLE_NASM "Use nasm instead of yasm for x86 assembly." OFF)
 set_aom_option_var(ENABLE_TESTDATA "Enables unit test data download targets."
-                   ON)
-set_aom_option_var(ENABLE_TESTS "Enables unit tests." ON)
+                   OFF)
+set_aom_option_var(ENABLE_TESTS "Enables unit tests." OFF)
 set_aom_option_var(ENABLE_TOOLS "Enable applications in tools sub directory."
-                   ON)
+                   OFF)
 set_aom_option_var(ENABLE_WERROR "Converts warnings to errors at compile time."
                    OFF)
 
 # Arm/AArch64 assembly/intrinsics flags.
 set_aom_option_var(ENABLE_NEON
-                   "Enables Neon optimizations on Arm/AArch64 targets." ON)
-set_aom_option_var(ENABLE_ARM_CRC32 "Enables Arm CRC32 optimizations." ON)
+                   "Enables Neon optimizations on Arm/AArch64 targets." OFF)
+set_aom_option_var(ENABLE_ARM_CRC32 "Enables Arm CRC32 optimizations." OFF)
 set_aom_option_var(
   ENABLE_NEON_DOTPROD
-  "Enables Armv8.2-A Neon dotprod optimizations on AArch64 targets." ON)
+  "Enables Armv8.2-A Neon dotprod optimizations on AArch64 targets." OFF)
 set_aom_option_var(
   ENABLE_NEON_I8MM
-  "Enables Armv8.2-A Neon i8mm optimizations on AArch64 targets." ON)
+  "Enables Armv8.2-A Neon i8mm optimizations on AArch64 targets." OFF)
 set_aom_option_var(ENABLE_SVE
-                   "Enables Armv8.2-A SVE optimizations on AArch64 targets." ON)
+                   "Enables Armv8.2-A SVE optimizations on AArch64 targets." OFF)
 
 # VSX intrinsics flags.
 set_aom_option_var(ENABLE_VSX "Enables VSX optimizations on PowerPC targets."
-                   ON)
+                   OFF)
 
 # x86/x86_64 assembly/intrinsics flags.
 set_aom_option_var(ENABLE_MMX "Enables MMX optimizations on x86/x86_64 targets."
-                   ON)
+                   OFF)
 set_aom_option_var(ENABLE_SSE "Enables SSE optimizations on x86/x86_64 targets."
-                   ON)
+                   OFF)
 set_aom_option_var(ENABLE_SSE2
-                   "Enables SSE2 optimizations on x86/x86_64 targets." ON)
+                   "Enables SSE2 optimizations on x86/x86_64 targets." OFF)
 set_aom_option_var(ENABLE_SSE3
-                   "Enables SSE3 optimizations on x86/x86_64 targets." ON)
+                   "Enables SSE3 optimizations on x86/x86_64 targets." OFF)
 set_aom_option_var(ENABLE_SSSE3
-                   "Enables SSSE3 optimizations on x86/x86_64 targets." ON)
+                   "Enables SSSE3 optimizations on x86/x86_64 targets." OFF)
 set_aom_option_var(ENABLE_SSE4_1
-                   "Enables SSE4_1 optimizations on x86/x86_64 targets." ON)
+                   "Enables SSE4_1 optimizations on x86/x86_64 targets." OFF)
 set_aom_option_var(ENABLE_SSE4_2
-                   "Enables SSE4_2 optimizations on x86/x86_64 targets." ON)
+                   "Enables SSE4_2 optimizations on x86/x86_64 targets." OFF)
 set_aom_option_var(ENABLE_AVX "Enables AVX optimizations on x86/x86_64 targets."
-                   ON)
+                   OFF)
 set_aom_option_var(ENABLE_AVX2
-                   "Enables AVX2 optimizations on x86/x86_64 targets." ON)
+                   "Enables AVX2 optimizations on x86/x86_64 targets." OFF)
