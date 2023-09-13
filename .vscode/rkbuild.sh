@@ -9,9 +9,11 @@ if [[ ! -a aomenc ]]; then
              -DCONFIG_AV1_DECODER=0 \
              -DAOM_TARGET_CPU=generic \
              -DCONFIG_MULTITHREAD=0 \
-             -DENABLE_DOCS=0
+             -DENABLE_DOCS=0 \
+             -DCMAKE_EXPORT_COMPILE_COMMANDS=True \
+             -DENABLE_MMX=1
              #-DCMAKE_CXX_COMPILER=/usr/bin/gcc
-    #ccmake ..
+    ccmake ..
 fi
 
-make -j32
+#make -j32

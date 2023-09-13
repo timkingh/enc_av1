@@ -8,13 +8,15 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/rkbuild/aomdec",
+            "program": "${workspaceFolder}/rkbuild/aomenc",
             "args": [
-                "/home/timkingh/doc/sample.av1",
-                "--progress", "-o", "${workspaceFolder}/sample.yuv",
-                "--limit=1"
+                "/home/timkingh/yuv/stream1_AV1_720p_1.5mbps_420p.yuv",
+                "--width=1280", "--height=720",
+                "-o", "${workspaceFolder}/stream1.av1",
+                "--limit=1", "--end-usage=q", "--min-q=10", "--max-q=28",
+                "--cpu-used=4", "--threads=4", "--passes=1"
             ],
-            "stopAtEntry": true,
+            "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,

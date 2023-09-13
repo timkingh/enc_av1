@@ -44,7 +44,7 @@ set_aom_detect_var(HAVE_VSX 0 "Enables VSX optimizations.")
 # x86/x86_64 feature flags.
 set_aom_detect_var(HAVE_MMX 0 "Enables MMX optimizations. ")
 set_aom_detect_var(HAVE_SSE 0 "Enables SSE optimizations.")
-set_aom_detect_var(HAVE_SSE2 0 "Enables SSE2 optimizations.")
+set_aom_detect_var(HAVE_SSE2 1 "Enables SSE2 optimizations.")
 set_aom_detect_var(HAVE_SSE3 0 "Enables SSE3 optimizations.")
 set_aom_detect_var(HAVE_SSSE3 0 "Enables SSSE3 optimizations.")
 set_aom_detect_var(HAVE_SSE4_1 0 "Enables SSE 4.1 optimizations.")
