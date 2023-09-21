@@ -10,11 +10,12 @@
             "request": "launch",
             "program": "${workspaceFolder}/rkbuild/aomenc",
             "args": [
-                "/home/timkingh/yuv/stream1_AV1_720p_1.5mbps_420p.yuv",
-                "--width=1280", "--height=720",
-                "-o", "${workspaceFolder}/stream1.av1",
+                "/home/timkingh/yuv/street_car_cif.yuv",
+                "--width=352", "--height=288",
+                "-o", "${workspaceFolder}/street.av1",
                 "--limit=1", "--end-usage=q", "--min-q=10", "--max-q=28",
-                "--cpu-used=4", "--threads=4", "--passes=1"
+                "--cpu-used=4", "--threads=1", "--passes=1",
+                "-v"
             ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",

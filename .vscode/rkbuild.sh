@@ -8,10 +8,10 @@ if [[ ! -a aomenc ]]; then
              -DCONFIG_AV1_ENCODER=1 \
              -DCONFIG_AV1_DECODER=0 \
              -DAOM_TARGET_CPU=generic \
-             -DCONFIG_MULTITHREAD=0 \
+             -DCONFIG_MULTITHREAD=1 \
              -DENABLE_DOCS=0 \
              -DCMAKE_EXPORT_COMPILE_COMMANDS=True \
-             -DENABLE_MMX=1
+             -DENABLE_NASM=1
              #-DCMAKE_CXX_COMPILER=/usr/bin/gcc
     ccmake ..
 fi
