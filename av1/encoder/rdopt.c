@@ -3328,12 +3328,21 @@ void av1_rd_pick_intra_mode_sb(const struct AV1_COMP *cpi, struct macroblock *x,
   mbmi->mv[0].as_int = 0;
   mbmi->skip_mode = 0;
 
-  const int64_t intra_yrd =
+  if (mbmi->mi_col == 48 && mbmi->mi_row == 24 && mbmi->bsize == BLOCK_16X32) {
+    printf("pause\n");
+  }
+
+  int64_t intra_yrd =
       av1_rd_pick_intra_sby_mode(cpi, x, &rate_y, &rate_y_tokenonly, &dist_y,
                                  &y_skip_txfm, bsize, best_rd, ctx);
 
   // Initialize default mode evaluation params
   set_mode_eval_params(cpi, x, DEFAULT_EVAL);
+
+  if (mbmi->mi_col == 48 && mbmi->mi_row == 24 && mbmi->bsize == BLOCK_16X32) {
+    mbmi->tx_size = TX_8X8;
+    intra_yrd = 0;
+  }
 
   if (intra_yrd < best_rd) {
     // Search intra modes for uv planes if needed

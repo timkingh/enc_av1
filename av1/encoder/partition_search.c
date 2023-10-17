@@ -3539,6 +3539,11 @@ static void rectangular_partition_search(
           best_rdc, 1, mi_pos_rect[i][sub_part_idx][0],
           mi_pos_rect[i][sub_part_idx][1], blk_params.subsize, partition_type);
     }
+
+    if (blk_params.mi_row == 24 && blk_params.mi_col == 48 && blk_params.bsize == BLOCK_32X32) {
+      memset(sum_rdc, 0, sizeof(RD_STATS));
+    }
+
     // Update HORZ / VERT best partition.
     if (sum_rdc->rdcost < best_rdc->rdcost) {
       sum_rdc->rdcost = RDCOST(x->rdmult, sum_rdc->rate, sum_rdc->dist);
@@ -5494,11 +5499,6 @@ BEGIN_PARTITION_SEARCH:
                         &part_search_state, &best_rdc, &pb_source_variance,
                         none_rd, &part_none_rd);
 
-  if (mi_col == 48 && mi_row == 24 && bsize == BLOCK_32X32) {
-    part_none_rd = 0;
-    memset(&best_rdc, 0, sizeof(RD_STATS));
-  }
-
 #if CONFIG_COLLECT_COMPONENT_TIMING
   end_timing(cpi, none_partition_search_time);
 #endif
@@ -5543,10 +5543,22 @@ BEGIN_PARTITION_SEARCH:
 #if CONFIG_COLLECT_COMPONENT_TIMING
   start_timing(cpi, rectangular_partition_search_time);
 #endif
+
+  if (mi_col == 48 && mi_row == 24 && bsize == BLOCK_32X32) {
+    printf("pause\n");
+  }
   // Rectangular partitions search stage.
   rectangular_partition_search(cpi, td, tile_data, tp, x, pc_tree, &x_ctx,
                                &part_search_state, &best_rdc,
                                rect_part_win_info, HORZ, VERT);
+
+  if (mi_col == 48 && mi_row == 24 && bsize == BLOCK_32X32) {
+    // MACROBLOCKD *const xd = &x->e_mbd;
+    // MB_MODE_INFO *const mbmi = xd->mi[0];
+    // memset(&best_rdc, 0, sizeof(RD_STATS));
+    // mbmi->tx_size = TX_8X8;
+  }
+
 #if CONFIG_COLLECT_COMPONENT_TIMING
   end_timing(cpi, rectangular_partition_search_time);
 #endif
