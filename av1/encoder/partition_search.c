@@ -5494,6 +5494,11 @@ BEGIN_PARTITION_SEARCH:
                         &part_search_state, &best_rdc, &pb_source_variance,
                         none_rd, &part_none_rd);
 
+  if (mi_col == 48 && mi_row == 24 && bsize == BLOCK_32X32) {
+    part_none_rd = 0;
+    memset(&best_rdc, 0, sizeof(RD_STATS));
+  }
+
 #if CONFIG_COLLECT_COMPONENT_TIMING
   end_timing(cpi, none_partition_search_time);
 #endif
@@ -5505,6 +5510,11 @@ BEGIN_PARTITION_SEARCH:
   split_partition_search(cpi, td, tile_data, tp, x, pc_tree, sms_tree, &x_ctx,
                          &part_search_state, &best_rdc, multi_pass_mode,
                          &part_split_rd);
+
+  if (mi_col == 48 && mi_row == 16 && bsize == BLOCK_64X64) {
+    part_split_rd = 0;
+  }
+
 #if CONFIG_COLLECT_COMPONENT_TIMING
   end_timing(cpi, split_partition_search_time);
 #endif

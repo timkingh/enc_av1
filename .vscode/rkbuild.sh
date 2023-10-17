@@ -16,4 +16,4 @@ if [[ ! -a aomenc ]]; then
     ccmake ..
 fi
 
-#make -j32
+make -j32

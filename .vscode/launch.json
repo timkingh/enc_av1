@@ -10,8 +10,8 @@
             "request": "launch",
             "program": "${workspaceFolder}/rkbuild/aomenc",
             "args": [
-                "/home/timkingh/yuv/street_car_cif.yuv",
-                "--width=352", "--height=288",
+                "/home/timkingh/yuv/street_200x120.yuv",
+                "--width=200", "--height=120",
                 "-o", "${workspaceFolder}/street.av1",
                 "--limit=1", "--end-usage=q", "--min-q=10", "--max-q=28",
                 "--cpu-used=4", "--threads=1", "--passes=1",
