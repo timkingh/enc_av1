@@ -3358,6 +3358,10 @@ void av1_rd_pick_intra_mode_sb(const struct AV1_COMP *cpi, struct macroblock *x,
       av1_rd_pick_intra_sbuv_mode(cpi, x, &rate_uv, &rate_uv_tokenonly,
                                   &dist_uv, &uv_skip_txfm, bsize,
                                   max_uv_tx_size);
+
+      if (mbmi->mi_col == 48 && mbmi->mi_row == 24 && mbmi->bsize == BLOCK_16X32) {
+        mbmi->uv_mode = UV_CFL_PRED;
+      }
     }
 
     // Intra block is always coded as non-skip
